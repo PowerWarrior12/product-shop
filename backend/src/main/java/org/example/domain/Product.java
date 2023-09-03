@@ -3,7 +3,6 @@ package org.example.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.lang.Nullable;
 
 import java.math.BigDecimal;
 

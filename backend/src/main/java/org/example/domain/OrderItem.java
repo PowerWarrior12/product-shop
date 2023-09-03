@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.example.domain.utils.OrderItemPrimaryKey;
 
-import java.util.UUID;
-
 import static org.example.domain.OrderItem.TABLE_NAME;
 
 @Entity

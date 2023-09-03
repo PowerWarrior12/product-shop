@@ -1,6 +1,6 @@
 create table shop_user(
 	login varchar(128) unique primary key,
-	password varchar(64),
+	password varchar(128),
 	name varchar(64),
 	last_name varchar(64),
 	phone_number varchar(64),

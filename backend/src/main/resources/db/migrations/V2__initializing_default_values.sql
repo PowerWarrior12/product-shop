@@ -1,6 +1,6 @@
 insert into shop_user values
-('admin', '$2y$10$1amoPIu7BlgtkTshSjrQbeeSwqjLAE7vI7iOpzeSDlbXlBpWo0CJS', 'admin', 'admin', ''),
-('example@mail.ru', '$2y$10$ETBa83fecXgpHMhESpTMxOu0JVfI6o7q3V7dHzTQ2zd0ei8g53fdi', 'Пётр', 'Юхлимов', '+79093601272');
+('admin', '{bcrypt}$2y$10$1amoPIu7BlgtkTshSjrQbeeSwqjLAE7vI7iOpzeSDlbXlBpWo0CJS', 'admin', 'admin', ''),
+('example@mail.ru', '{bcrypt}$2y$10$ETBa83fecXgpHMhESpTMxOu0JVfI6o7q3V7dHzTQ2zd0ei8g53fdi', 'Пётр', 'Юхлимов', '+79093601272');
 
 insert into user_role values
 ('admin', 'ADMIN'),
