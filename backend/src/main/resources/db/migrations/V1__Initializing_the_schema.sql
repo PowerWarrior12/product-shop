@@ -15,15 +15,18 @@ create table user_role(
 );
 
 create table category(
-	category_name varchar(128) unique primary key
+	category_name varchar(128) unique primary key,
+	value_count integer
 );
 
 create table brand(
-	brand_name varchar(128) unique primary key
+	brand_name varchar(128) unique primary key,
+	value_count integer
 );
 
 create table producer(
-	producer_name varchar(128) unique primary key
+	producer_name varchar(128) unique primary key,
+    value_count integer
 );
 
 create table product(
@@ -68,7 +71,6 @@ create table order_item(
 	constraint order_code_foreign_key_to_user_order foreign key(order_code) references user_order(order_code),
 	constraint product_name_foreign_key_to_product foreign key(product_name) references product(product_name)
 );
-
 
 
 

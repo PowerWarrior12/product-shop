@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Collection;
 import java.util.UUID;
 
 import static org.example.domain.Order.TABLE_NAME;
@@ -23,7 +23,7 @@ public class Order {
     @Column(name = USER_LOGIN_COLUMN_NAME)
     private String userLogin;
     @OneToMany(mappedBy = "order")
-    private List<OrderItem> orderItemList;
+    private Collection<OrderItem> orderItemList;
 
     // region constants
     public static final String TABLE_NAME = "user_order";

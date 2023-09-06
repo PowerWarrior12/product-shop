@@ -10,7 +10,6 @@ import org.example.exceptions.PasswordNotMatchException;
 import org.example.repositories.UserRepository;
 import org.example.security.JwtProvider;
 import org.example.services.AuthenticationService;
-import org.example.services.UserService;
 import org.example.services.mappers.UserMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,7 +26,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final UserMapper userMapper;
 
     @Override
-    public String login(AuthenticationUserDto authenticationUserDto) {
+    public String login(AuthenticationUserDto authenticationUserDto) throws ApiRequestException {
         try {
             Authentication authentication = authenticationManager
                     .authenticate(userMapper.mapAuthenticationUserDtoToAuthentication(authenticationUserDto));
@@ -40,7 +39,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
-    public void registration(RegistrationUserDto registrationUserDto) {
+    public void registration(RegistrationUserDto registrationUserDto) throws LoginAlreadyExistException, PasswordNotMatchException {
         String login = registrationUserDto.getLogin();
         if (userRepository.findByLogin(login).isPresent()) {
             throw new LoginAlreadyExistException(String.format("Login: %s already exist", login),login);

@@ -9,7 +9,7 @@ repositories {
 dependencies {
     testImplementation("junit:junit:4.13.1")
     testImplementation("junit:junit:4.13.1")
-    val springBootVer = "3.1.3"
+    val springBootVer = "3.1.2"
     val flywayVer = "9.22.0"
     val postgresqlVer = "42.6.0"
     val lombokVer = "1.18.28"
