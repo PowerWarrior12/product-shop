@@ -17,7 +17,7 @@ import static org.example.Constants.PICTURES_MAIN_PATH;
 @RequiredArgsConstructor
 public class PictureServiceImpl implements PictureService {
     private final PictureRepository pictureRepository;
-    @Value("${hostname}")
+    @Value("${product-shop.hostname}")
     private String hostname;
     @Override
     public String savePicture(MultipartFile file) {

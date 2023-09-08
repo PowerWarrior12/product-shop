@@ -41,7 +41,7 @@ public class WebSecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(httpRequests -> {
                     httpRequests
-                            .requestMatchers("/account/**", PICTURES_MAIN_PATH, "/products/**", "/filters/**").permitAll()
+                            .requestMatchers("/account/**", PICTURES_MAIN_PATH + "/**", "/products/**", "/filters/**").permitAll()
                             .requestMatchers("/orders/**").authenticated()
                             .requestMatchers("/admin/**").hasRole("ADMIN")
                             .anyRequest().denyAll();

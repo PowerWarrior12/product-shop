@@ -30,7 +30,7 @@ public class UserMapper {
         user.setName(registrationUserDto.getName());
         user.setLastName(registrationUserDto.getLastName());
         user.setPhoneNumber(registrationUserDto.getPhoneNumber());
-        user.setRoles(List.of(Role.CUSTOMER));
+        user.setRoles(List.of(Role.ROLE_CUSTOMER));
 
         return user;
     }

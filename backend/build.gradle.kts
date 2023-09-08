@@ -1,9 +1,20 @@
-plugins {
-    id("java")
-}
-
 repositories {
     mavenCentral()
+}
+
+plugins {
+    id("java")
+    id("com.github.johnrengelman.shadow")
+    id("org.springframework.boot") version "3.1.3"
+    id("io.spring.dependency-management") version "1.1.3"
+}
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "org.example.ProductShopApplication"
+    }
+    from ({
+        configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
+    })
 }
 
 dependencies {
@@ -44,8 +55,6 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.mockito:mockito-core:5.5.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVer")
-
-
 }
 
 tasks.test {

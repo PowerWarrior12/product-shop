@@ -3,8 +3,8 @@ insert into shop_user values
 ('example@mail.ru', '{bcrypt}$2y$10$ETBa83fecXgpHMhESpTMxOu0JVfI6o7q3V7dHzTQ2zd0ei8g53fdi', 'Пётр', 'Юхлимов', '+79093601272');
 
 insert into user_role values
-('admin', 'ADMIN'),
-('example@mail.ru', 'CUSTOMER');
+('admin', 'ROLE_ADMIN'),
+('example@mail.ru', 'ROLE_CUSTOMER');
 
 insert into category values
 ('Яйца', 7),('Молоко', 7),('Хлеб', 7),('Творог', 7),('Шоколад', 4),('Варенье', 0),('Мясо', 0);
