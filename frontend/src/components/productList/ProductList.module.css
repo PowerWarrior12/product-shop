@@ -1,0 +1,7 @@
+.productList {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    border-left: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7;
+}

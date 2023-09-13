@@ -1,0 +1,9 @@
+.authForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.authForm * {
+    margin-bottom: 20px;
+}
