@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/products")
 public class ProductController {
     private final ProductService productService;
-    @GetMapping("/custom-filter")
+    @PostMapping("/custom-filter")
     public ResponseEntity<PageableProductDto> getProductsByFilterOrderAndPaging(
             @RequestBody OrderFilterPagingProductsRequest request,
             BindingResult bindingResult

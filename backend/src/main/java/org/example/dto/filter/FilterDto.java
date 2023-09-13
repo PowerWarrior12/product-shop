@@ -16,7 +16,7 @@ public class FilterDto {
     @JsonCreator
     public FilterDto(
             @JsonProperty("filter_type") String name,
-            @JsonProperty("value") Set<FilterValueDto> values) {
+            @JsonProperty("values") Set<FilterValueDto> values) {
         this.name = name;
         this.values = values;
     }
@@ -28,8 +28,8 @@ public class FilterDto {
                 .toList();
     }
     // region constants
-    public static final String BRAND_TYPE_NAME = "brand";
-    public static final String PRODUCER_TYPE_NAME = "producer";
-    public static final String CATEGORY_TYPE_NAME = "category";
+    public static final String BRAND_TYPE_NAME = "Бренд";
+    public static final String PRODUCER_TYPE_NAME = "Производитель";
+    public static final String CATEGORY_TYPE_NAME = "Категория";
     // endregion
 }

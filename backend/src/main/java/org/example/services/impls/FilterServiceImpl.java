@@ -24,22 +24,25 @@ public class FilterServiceImpl implements FilterService {
 
     @Transactional
     @Override
-    public Collection<FilterDto> loadFiltersByAppliedFilters(Iterable<FilterDto> inputFilters) {
+    public Collection<FilterDto> loadFiltersByAppliedFilters(Collection<FilterDto> inputFilters) {
         List<String> brandNames = new ArrayList<>();
         List<String> categoryNames = new ArrayList<>();
         List<String> producerNames = new ArrayList<>();
-        inputFilters.forEach(filterDto -> {
-            switch (filterDto.getName()) {
-                case BRAND_TYPE_NAME:
-                    brandNames.addAll(filterDto.getValuesNames());
-                    break;
-                case PRODUCER_TYPE_NAME:
-                    producerNames.addAll(filterDto.getValuesNames());
-                default:
-                    categoryNames.addAll(filterDto.getValuesNames());
-                    break;
-            }
-        });
+        if (inputFilters != null) {
+            inputFilters.forEach(filterDto -> {
+                switch (filterDto.getName()) {
+                    case BRAND_TYPE_NAME:
+                        brandNames.addAll(filterDto.getValuesNames());
+                        break;
+                    case PRODUCER_TYPE_NAME:
+                        producerNames.addAll(filterDto.getValuesNames());
+                        break;
+                    default:
+                        categoryNames.addAll(filterDto.getValuesNames());
+                        break;
+                }
+            });
+        }
         Collection<FilterProjection> filters = productRepository.findAllWithFiltersInMind(
                 brandNames,
                 brandNames.isEmpty(),
@@ -48,6 +51,6 @@ public class FilterServiceImpl implements FilterService {
                 producerNames,
                 producerNames.isEmpty());
 
-        return filterMapper.filterProjectionsToFilterDtoCollection(filters);
+        return filterMapper.filterProjectionsToFilterDtoCollection(filters, inputFilters);
     }
 }

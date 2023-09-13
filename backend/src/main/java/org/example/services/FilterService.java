@@ -5,5 +5,5 @@ import org.example.dto.filter.FilterDto;
 import java.util.Collection;
 
 public interface FilterService {
-    public Collection<FilterDto> loadFiltersByAppliedFilters(Iterable<FilterDto> inputFilters);
+    public Collection<FilterDto> loadFiltersByAppliedFilters(Collection<FilterDto> inputFilters);
 }
