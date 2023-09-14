@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import cls from './Products.module.css'
 import PageHeader from "../../components/header/PageHeader";
 import ProductList from "../../components/productList/ProductList";
@@ -8,11 +8,20 @@ import {CircularProgress} from "@mui/material";
 import {useFilters} from "../../hooks/useFilters";
 import {useProducts} from "../../hooks/useProducts";
 import {sorts} from "../../constants/commonConstants";
+import PaginationMoreBlock from "../../components/paginator/PaginationMoreBlock";
 
 const Products = () => {
+
+    const [filtering, setFiltering] = useState({ page: 0, sort: null, selectedFilters: []})
+
     const [filters, isFilterLoading, isFilterError, selectedFilters, setSelectedFilters] = useFilters()
     const [sort, setSort] = useState(null)
-    const [products, isProductLoading, productError] = useProducts(null, selectedFilters, sort)
+    const [page, setPage] = useState(0)
+    const [products, isProductLoading, productError] = useProducts(page, setPage, selectedFilters, sort)
+
+    const updatePage = () => {
+        setPage(page + 1)
+    }
 
     return (
         <div>
@@ -23,9 +32,10 @@ const Products = () => {
                 ? <div className={cls.loadingBarContainer}> <CircularProgress/> </div>
                 : <div className={cls.mainContainer}>
                     <FilterBoxes filterBoxes={filters} setSelectedFilters={setSelectedFilters} selectedFilters={selectedFilters}/>
-                    <div>
+                    <div className={cls.sectionProducts}>
                         <SortingComponent sorts={sorts} currentSort={sort} setCurrentSort={setSort}/>
                         <ProductList products={products}/>
+                        <PaginationMoreBlock onClick={updatePage}/>
                     </div>
                 </div>
             }

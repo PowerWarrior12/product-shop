@@ -11,7 +11,8 @@ const FilterBoxes = ({filterBoxes, selectedFilters, setSelectedFilters}) => {
         }
         setSelectedFilters(newSelectedFilterBoxes)
     }
-    return (<div className={cls.filterBoxes}>
+    return (
+        <div className={cls.filterBoxes}>
             {filterBoxes.map(filterBox => {
                 const selectedFilter = selectedFilters.find(item => item.filter_type === filterBox.filter_type)
                 const selectedFilterValues = selectedFilter ? selectedFilter.values : []

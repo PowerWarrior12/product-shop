@@ -1,7 +1,5 @@
 .filterBoxes {
-    width: 100%;
-    max-width: 216px;
-    min-width: 188px;
+    width: 195px;
     margin-right: 43px;
     flex-shrink: 1.6;
 }

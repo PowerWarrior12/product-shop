@@ -1,0 +1,14 @@
+.paginationMoreBlock {
+    border: #e7e7e7 solid 1px;
+    min-height: 50px;
+    margin: 15px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginationMoreBlock__content {
+    font-weight: 800;
+    font-size: 15px;
+}
