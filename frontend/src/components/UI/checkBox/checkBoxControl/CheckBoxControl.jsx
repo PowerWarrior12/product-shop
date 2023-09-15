@@ -1,5 +1,6 @@
 import cls from './CheckBoxControl.module.css';
 import checkBoxImage from "../../../../icons/checkbox.svg";
+
 const CheckBoxControl = ({state}) => {
     return (
         <span

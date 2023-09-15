@@ -1,5 +1,4 @@
 import './App.css';
-import Products from "./pages/products/Products";
 import {BrowserRouter} from "react-router-dom";
 import {AppRouter} from "./components/AppRouter";
 import NavBar from "./components/navBar/NavBar";
@@ -12,8 +11,10 @@ function App() {
     return (
         <AuthContext.Provider value={{authStore}}>
             <div className="App">
-                <div className="container-main">
-                    <NavBar/>
+                <div>
+                    <div className="container-main">
+                        <NavBar/>
+                    </div>
                     <BrowserRouter>
                         <AppRouter/>
                     </BrowserRouter>

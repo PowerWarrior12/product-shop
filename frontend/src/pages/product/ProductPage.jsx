@@ -28,8 +28,10 @@ const ProductPage = () => {
             <PageHeader>
                 {params.productName}
             </PageHeader>
-            <ProductDetailInfo product={product}/>
-            <ProductDetailContent product={product}/>
+            <div className="container-main">
+                <ProductDetailInfo product={product}/>
+                <ProductDetailContent product={product}/>
+            </div>
         </div>
     );
 };
