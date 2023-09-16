@@ -3,13 +3,21 @@ import {Button, TextField} from "@mui/material";
 import cls from "./AuthorizationModal.module.css"
 import {useContext, useState} from "react";
 import {AuthContext} from "../../context/AuthContext";
+import {useDispatch} from "react-redux";
+import {setUser} from "../../store/reducers/user/user-slice";
 
 const AuthorizationModal = ({visible, setVisible}) => {
+    const dispatch = useDispatch()
     const {authStore} = useContext(AuthContext);
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const authorization = () => {
-        authStore.authorization(login, password);
+        authStore.authorization(login, password).then(result => {
+            if (result) {
+                dispatch(setUser({ user: "I am user" }))
+                setVisible(false)
+            }
+        });
     }
 
     return (

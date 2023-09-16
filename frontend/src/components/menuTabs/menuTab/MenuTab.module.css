@@ -1,0 +1,18 @@
+.menuTabContainer {
+    display: flex;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    max-height: 56px;
+    min-height: 56px;
+    padding: 14px 17px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    margin: 7px 17px 0 0;
+}

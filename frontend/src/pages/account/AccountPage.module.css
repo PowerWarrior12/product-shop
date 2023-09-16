@@ -1,0 +1,11 @@
+.accountContainer {
+    margin-top: 15px;
+    display: flex;
+    gap:72px;
+}
+
+.tabsContainer {
+    width: 100%;
+    max-width: 956px;
+    min-width: 300px;
+}
