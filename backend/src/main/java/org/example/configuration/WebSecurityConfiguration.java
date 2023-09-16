@@ -42,7 +42,7 @@ public class WebSecurityConfiguration {
                 .authorizeHttpRequests(httpRequests -> {
                     httpRequests
                             .requestMatchers("/account/**", PICTURES_MAIN_PATH + "/**", "/products/**", "/filters/**").permitAll()
-                            .requestMatchers("/orders/**").authenticated()
+                            .requestMatchers("/orders/**", "/user/**").authenticated()
                             .requestMatchers("/admin/**").hasRole("ADMIN")
                             .anyRequest().denyAll();
                 })

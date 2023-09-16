@@ -40,7 +40,8 @@ public class UserMapper {
                 user.getLogin(),
                 user.getName(),
                 user.getLastName(),
-                user.getPhoneNumber()
+                user.getPhoneNumber(),
+                user.getRoles().stream().map(Enum::name).toList()
         );
     }
 
