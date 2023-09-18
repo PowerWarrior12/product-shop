@@ -1,19 +1,20 @@
 import React from 'react';
 import cls from './Basket.module.css'
 import BasketItem from "./basketItem/BasketItem";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {selectBasketProductsFromBasket} from "../../store/reducers/basket/basket-selector";
 import SecondaryButton from "../../components/UI/secondaryButton/SecondaryButton";
 import {useNavigate} from "react-router-dom";
 import {OrderRepository} from "../../repository/OrderRepository";
+import {resetBasketProducts} from "../../store/reducers/basket/basket-slice";
 
 const Basket = () => {
     const basketProducts = useSelector(selectBasketProductsFromBasket)
     const router = useNavigate()
+    const dispatch = useDispatch()
 
     const processCreateOrder = () => {
         let creatingOrder = {
-            date: new Date(),
             items: Array.from(basketProducts.values()).map(basketProduct => {
                     return {
                         product_name: basketProduct.product.product_name,
@@ -23,6 +24,8 @@ const Basket = () => {
             )
         }
         OrderRepository.createOrder(creatingOrder).then(() => {
+            dispatch(resetBasketProducts())
+            localStorage.removeItem("basket")
             router("/")
         }, () => {
 

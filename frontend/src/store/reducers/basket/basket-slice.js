@@ -11,6 +11,9 @@ export const basketSlice = createSlice({
     name: "basket",
     initialState: initialState,
     reducers: {
+        resetBasketProducts(state) {
+            state.basketProducts = new Map()
+        },
         setBasketProducts(state, action) {
             state.basketProducts = new Map(Object.entries(action.payload))
         },
@@ -40,4 +43,4 @@ export const basketSlice = createSlice({
 })
 
 export default basketSlice.reducer
-export const { setBasketProducts, addProduct, deleteProduct} = basketSlice.actions
+export const { resetBasketProducts, setBasketProducts, addProduct, deleteProduct} = basketSlice.actions
