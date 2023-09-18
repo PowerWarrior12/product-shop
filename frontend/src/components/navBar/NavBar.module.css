@@ -1,0 +1,17 @@
+.navBar {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.logoContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.logo {
+    width: 280px;
+    height: 150px;
+}

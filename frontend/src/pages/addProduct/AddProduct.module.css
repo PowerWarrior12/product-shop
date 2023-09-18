@@ -1,0 +1,30 @@
+
+.mainContainer {
+    display: flex;
+    gap: 80px;
+    margin-bottom: 30px;
+}
+
+.textFieldsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.addingProductPicture {
+    margin-top: 8px;
+    width: 260px;
+    height: 260px;
+    border-radius: 3px;
+    object-fit: scale-down;
+    border: rgba(113, 113, 113, 0.4) solid 2px;
+    cursor: pointer;
+}
+
+.selector {
+    text-align: left;
+}
+
+.applyButtonContainer {
+    margin-top: 8px;
+}

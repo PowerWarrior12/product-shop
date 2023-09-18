@@ -1,0 +1,21 @@
+.iconButtonContainer {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.title {
+    color: #101111;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    max-width: 100%;
+}
+
+.image {
+    width: 22px;
+    height: 22px;
+}

@@ -1,0 +1,14 @@
+
+.productCharacteristicsElement {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.productCharacteristicsName {
+    min-width: 220px;
+    width: 220px;
+}
+
+.productCharacteristicsValue {
+    font-weight: 500;
+}

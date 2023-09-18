@@ -1,0 +1,31 @@
+.basket {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.buttonTypeSolid {
+    background-color: #101111;
+    border: 1px solid #101111;
+    color: #101111
+}
+
+.secondaryButton {
+    align-items: center;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    justify-content: center;
+    min-height: 36px;
+    padding: 8px 15px;
+    position: relative;
+    transition: color .15s ease, background-color .15s ease, border-color .3s ease;
+}
+
+.secondaryButtonInner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+}
