@@ -1,0 +1,14 @@
+.checkBoxControl {
+    border: 2px solid #d0d0d0;
+    display: block;
+    border-radius: 2px;
+    height: 18px;
+    width: 18px;
+    min-width: 18px;
+}
+
+.checkBoxControlChecked {
+    border-style: none;
+    background: #fff;
+    color: #e6000e
+}

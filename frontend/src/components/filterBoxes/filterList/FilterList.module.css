@@ -1,0 +1,32 @@
+.filtersContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.filterRow {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.filterBoxTitleContainer {
+    display: flex;
+}
+
+.filterBoxTitle {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.filterCount {
+    align-self: center;
+    color: #b8b8b8;
+    margin: 0 5px;
+    min-width: fit-content;
+}

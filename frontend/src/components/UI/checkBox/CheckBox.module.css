@@ -1,0 +1,14 @@
+.checkBoxContainer {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    margin: 7px 0;
+}
+
+.checkBoxTitle {
+    padding-left: 9px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: start;
+}

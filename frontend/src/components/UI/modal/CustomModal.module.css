@@ -1,0 +1,38 @@
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1300;
+    display: none;
+}
+
+.modalContent {
+    position: absolute;
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    min-width: 250px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 11px 15px -7px,
+                rgba(0, 0, 0, 0.14) 0 24px 38px 3px,
+                rgba(0, 0, 0, 0.12) 0 9px 46px 8px;
+    z-index: 1301;
+}
+
+.modalBack {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

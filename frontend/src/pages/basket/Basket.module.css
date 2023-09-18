@@ -1,0 +1,58 @@
+.basketLayout {
+    display: flex;
+    margin: 0 auto;
+    max-width: 956px;
+    padding: 23px 0 88px;
+}
+
+.basketLayoutLeft {
+    margin-right: 40px;
+    width: 100%;
+}
+
+.basketLayoutRight {
+    min-width: 308px;
+    width: 308px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.basketHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    max-height: 54px;
+}
+
+.orderProperties {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.orderProperty {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.bigOrderProperty {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.createOrderButtonContainer {
+    margin-top: 20px;
+}
+
+.buttonText {
+    font-size: 15px;
+    font-weight: 400;
+}

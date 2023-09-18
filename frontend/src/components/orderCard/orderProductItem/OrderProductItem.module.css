@@ -1,0 +1,17 @@
+.orderProductItemContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 500;
+    color: #717171;
+    gap: 30px;
+}
+
+.orderProductItemContainer > * {
+    margin-top: 5px;
+}
+
+.productName {
+    min-width: 200px;
+    text-align: start;
+}

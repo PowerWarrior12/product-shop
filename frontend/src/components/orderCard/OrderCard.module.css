@@ -1,0 +1,30 @@
+.orderCardContainer {
+    margin: 15px 0;
+    border-radius: 3px;
+    border: #717171 dashed 1px;
+}
+
+.orderCardDataContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 5px 15px;
+}
+
+.orderCardTitle {
+    padding: 5px 0;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: #717171 dashed 1px;
+}
+
+.orderCardPoint {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.orderCardProductsContainer {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+}

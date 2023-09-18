@@ -1,0 +1,16 @@
+.sortsContainer {
+    display: flex;
+    margin: 0 0 16px;
+}
+
+.sortsItem {
+    cursor: pointer;
+    align-items: center;
+    background-color: transparent;
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+.sortsItemSelected {
+    color: #717171;
+}
