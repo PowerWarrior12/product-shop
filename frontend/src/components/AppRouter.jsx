@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import {routers} from "../router/routers";
 
-export const AppRouter = () => {
+export const AppRouter = ({routers}) => {
     return (
         <Routes>
             {

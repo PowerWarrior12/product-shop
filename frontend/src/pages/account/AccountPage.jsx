@@ -1,22 +1,34 @@
-import React, {useContext} from 'react';
 import cls from './AccountPage.module.css'
-import PersonalDataTab from "./personalData/PersonalDataTab";
+import PersonalData from "./personalData/PersonalData";
 import MenuTabs from "../../components/menuTabs/MenuTabs";
-import {accountMenuItems} from "../../constants/commonConstants";
-import {AuthContext} from "../../context/AuthContext";
+import {accountMenuItems, adminMenuItems} from "../../constants/commonConstants";
 import {useDispatch, useSelector} from "react-redux";
 import {selectUserFromUserState} from "../../store/reducers/user/user-selector";
-import {logout} from "../../store/reducers/user/user-slice";
+import {logout} from "../../store/reducers/auth/auth-thunks";
+import {useNavigate} from "react-router-dom";
+import {AppRouter} from "../../components/AppRouter";
+import {accountRouters} from "../../router/routers";
+import {useEffect, useState} from "react";
+import {Roles} from "../../constants/Roles";
 
 const AccountPage = () => {
-    const {authStore} = useContext(AuthContext);
+    const router = useNavigate()
     const dispatch = useDispatch()
     const user = useSelector(selectUserFromUserState)
+    const [isAdmin, setIsAdmin] = useState(false)
+
+    useEffect(() => {
+        if (user) {
+            setIsAdmin(user.roles.includes(Roles.ADMIN));
+        }
+    }, [user]);
+
     const prepareMenuClick = (value) => {
         if (value === "logout") {
-            authStore.logout().then(() => {
-                dispatch(logout())
-            });
+            dispatch(logout())
+            router("/")
+        } else {
+            router(`/account/${value}`)
         }
     }
 
@@ -26,9 +38,11 @@ const AccountPage = () => {
                 ?
                 <div className="container-main">
                     <div className={cls.accountContainer}>
-                        <MenuTabs onChange={prepareMenuClick} menuItems={accountMenuItems}/>
+                        <MenuTabs onChange={prepareMenuClick}
+                                  menuItems={ isAdmin ? adminMenuItems : accountMenuItems }
+                        />
                         <div className={cls.tabsContainer}>
-                            <PersonalDataTab/>
+                            <AppRouter routers={accountRouters}/>
                         </div>
                     </div>
                 </div>

@@ -8,9 +8,7 @@ const ProductList = ({products}) => {
             {products.map(product =>
                 <ProductCard
                     key = {product.product_name}
-                    image={product.picture}
-                    description={product.product_name}
-                    price={product.price}
+                    product={product}
                 />
             )}
         </div>

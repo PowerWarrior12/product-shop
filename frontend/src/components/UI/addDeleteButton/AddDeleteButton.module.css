@@ -1,0 +1,55 @@
+.basket {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.buttonSolid {
+    background-color: #101111;
+    border: 1px solid #101111;
+    color: #101111
+}
+
+.addDeleteButton {
+    align-items: center;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    justify-content: center;
+    height: 36px;
+    min-height: 36px;
+    padding: 4px 0;
+    display: flex;
+    position: relative;
+    transition: color .15s ease, background-color .15s ease, border-color .3s ease;
+}
+
+.countContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: text;
+}
+
+.countText {
+    text-align: center;
+}
+
+.buttonContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 13px;
+}
+
+.buttonImage {
+    width: 10px;
+    height: 10px;
+}
