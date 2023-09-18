@@ -12,7 +12,7 @@ services:
       DATA_SOURCE_USER: postgres
       DATA_SOURCE_DB: shop
       IMAGE_DIR: /images
-      HOST_NAME: localhost:8080
+      HOST_NAME: http://localhost:8080
     ports:
       - '8080:8080'
     networks:

@@ -17,6 +17,7 @@ import static org.example.domain.Order.TABLE_NAME;
 public class Order {
     @Id
     @Column(name = ORDER_CODE_COLUMN_NAME)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID orderCode;
     @Column(name = DATE_COLUMN_NAME)
     private LocalDateTime date;

@@ -8,6 +8,7 @@ import org.example.dto.order.FullOrderDto;
 import org.example.dto.order.OrderItemDto;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Component
@@ -26,7 +27,7 @@ public class OrderMapper {
 
     public Order createOrderDtoToOrder(CreateOrderDto createOrderDto, String userLogin) {
         Order order = new Order();
-        order.setDate(createOrderDto.getTime());
+        order.setDate(LocalDateTime.now());
         order.setUserLogin(userLogin);
         return order;
     }
