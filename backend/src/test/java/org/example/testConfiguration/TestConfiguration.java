@@ -1,4 +1,4 @@
-package org.example.security.testConfiguration;
+package org.example.testConfiguration;
 
 import org.example.utils.TimeProvider;
 import org.mockito.Mockito;
@@ -15,8 +15,8 @@ public class TestConfiguration {
     TimeProvider getTimeProvider() {
         TimeProvider timeProvider = Mockito.mock(TimeProvider.class);
 
-        Instant start = Instant.ofEpochMilli(1693735200000L);
-        Instant end = Instant.ofEpochMilli(1693737000000L);
+        Instant start = Instant.now();
+        Instant end = start.plusSeconds(10000);
         Mockito.when(timeProvider.getCurrentTimeOfCurrentTimeZone()).thenReturn(start);
         Mockito.when(timeProvider.getTimeOfCurrentTimeZoneWithOffset(start, Duration.ofMinutes(30))).thenReturn(end);
 

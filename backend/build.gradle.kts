@@ -54,7 +54,9 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.mockito:mockito-core:5.5.0")
-    testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVer")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVer")// https://mvnrepository.com/artifact/com.h2database/h2
+    testImplementation("com.h2database:h2:2.2.224")
+    testImplementation("io.github.yashchenkon:assertsqlcount:1.1.0")
 }
 
 tasks.test {

@@ -2,7 +2,7 @@ package org.example.security;
 
 import org.example.enums.Role;
 import org.example.exceptions.GenerateJwtTokenException;
-import org.example.security.testConfiguration.TestConfiguration;
+import org.example.testConfiguration.TestConfiguration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,7 +31,7 @@ class JwtProviderTest {
     public void generateTokenTest() throws GenerateJwtTokenException {
         String username = "Peter";
         String password = "1234567";
-        Collection<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(Role.CUSTOMER.name()));
+        Collection<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(Role.ROLE_CUSTOMER.name()));
 
         String verificationJwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJDVVNUT01FUiJdLCJzdWIiOiJQZXRlciIsImlhdCI6MTY5MzczNTIwMCwiZXhwIjoxNjkzNzM3MDAwLCJpc3MiOiJpc3N1ZXIifQ.5p0AADGtggpD2JoWokf_ftQ-CR1bSRWfW6rc0X6fo5g";
 

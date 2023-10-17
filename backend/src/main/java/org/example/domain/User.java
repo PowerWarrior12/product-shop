@@ -1,6 +1,7 @@
 package org.example.domain;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.enums.Role;
@@ -13,6 +14,7 @@ import static org.example.domain.User.TABLE_NAME;
 @Table(name = TABLE_NAME)
 @Getter
 @Setter
+@EqualsAndHashCode
 public class User {
     @Id
     @Column(name = LOGIN_COLUMN_NAME)

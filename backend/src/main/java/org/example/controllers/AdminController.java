@@ -25,7 +25,8 @@ public class AdminController {
     private final ProductService productService;
     @GetMapping("/orders")
     public ResponseEntity<Collection<FullOrderDto>> getAllOrders() {
-        return ResponseEntity.ok(orderService.loadAllOrders());
+        var x = orderService.loadAllOrders();
+        return ResponseEntity.ok(x);
     }
     @PostMapping("/products/add")
     public ResponseEntity<FullProductDto> createProduct(
